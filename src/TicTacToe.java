@@ -60,7 +60,7 @@ public class TicTacToe {
             System.out.println("Enter X and Y (1..3):");
             x = scanner.nextInt() - 1;
             y = scanner.nextInt() - 1;
-        } while (isCellValid(x, y));
+        } while (checkCell(x, y));
         table[y][x] = SIGN_X;
     }
 
@@ -69,11 +69,11 @@ public class TicTacToe {
         do {
             x = random.nextInt(3);
             y = random.nextInt(3);
-        } while (isCellValid(x, y));
+        } while (checkCell(x, y));
         table[y][x] = SIGN_O;
     }
 
-    boolean isCellValid(int x, int y) {
+    boolean checkCell(int x, int y) {
         if (x < 0 || y < 0 || x >= 3 || y >= 3) {
             return true;
         }
